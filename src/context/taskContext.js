@@ -10,9 +10,8 @@ export const TaskProvider = ({ children }) => {
 
     const [tasks, setTasks] = useState([{id: '1', title:'first task', description:'some task'}]);
     
-    const createTask = (title, description) => {
-       return setTasks([...tasks, {title,description, id:uuid()}])
-    }
+    const createTask = (title, description) => setTasks([...tasks, {title,description, id:uuid()}])
+    
 
     const updateTask = (id, updatedTask) => {
         setTasks([...tasks.map(task => task.id === id ? {...task, ...updatedTask}:tasks)])
